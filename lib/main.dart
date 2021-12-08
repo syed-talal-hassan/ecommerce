@@ -1,4 +1,5 @@
 import 'package:ecommerce/screens/home.dart';
+import 'package:ecommerce/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ecommerce/screens/login.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
           fontFamily: GoogleFonts.lato().fontFamily,
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => Login(),
-        "/login": (context) => Login(),
+        AppRoutes.loginRoute: (context) => Login(),
+        AppRoutes.homeRoute: (context) => Home(),
       },
     );
   }
